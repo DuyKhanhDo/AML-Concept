@@ -34,4 +34,9 @@
         paymentScreen.classList.remove("hidden");
         subscriptionScreen.classList.add("hidden");
     }
+
+    function DisplayPaymentInfo(){
+        var paymentInfo = document.getElementById("payment-info");
+        paymentInfo.classList.remove("hidden");
+    }
 </script>
