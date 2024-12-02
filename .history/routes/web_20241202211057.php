@@ -38,6 +38,6 @@ Route::get('/subscribe', [SubscriptionController::class, 'SubscribeView'])->name
 
 //Librarian routes
 Route::get('/review', [ReviewController::class, 'ReviewView'])
-->middleware(CheckIfLibrarian::class)
+->middleware(CheckIfLibrarian)
 ->name('review');
 Route::post('/approve-review', [ReviewController::class, 'ApproveReview'])->name('approve.review');

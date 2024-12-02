@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\PayPalController;
 use App\Http\Controllers\ReviewController;
-use App\Http\Middleware\CheckIfLibrarian;
 
 Auth::routes();
 
@@ -38,6 +37,6 @@ Route::get('/subscribe', [SubscriptionController::class, 'SubscribeView'])->name
 
 //Librarian routes
 Route::get('/review', [ReviewController::class, 'ReviewView'])
-->middleware(CheckIfLibrarian::class)
+->middleware()
 ->name('review');
 Route::post('/approve-review', [ReviewController::class, 'ApproveReview'])->name('approve.review');
